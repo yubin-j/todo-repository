@@ -50,7 +50,7 @@ def get_todos():
     cursor.close()
     conn.close()
 
-    return [{"id": r[0], "content": r[1], "created_at": str(r[2])} for r in rows]
+    return { "data": [{"id": r[0], "content": r[1], "created_at": str(r[2])} for r in rows] }
 
 
 @app.delete("/todos/{todo_id}")
